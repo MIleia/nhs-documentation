@@ -8,6 +8,12 @@ dist
 # Node dependencies
 node_modules
 
+# Local data not needed on GitHub
+.data/
+
+# Static assets (optionnel, à ignorer si non versionnés)
+public/
+
 # Logs
 *.log
 
