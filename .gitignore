@@ -1,28 +1,29 @@
-# Nuxt dev/build outputs
-.output
-.nuxt
-.nitro
-.cache
-dist
+### Nuxt/Vue build/dev outputs
+.nuxt/
+.output/
+.nitro/
+.cache/
+dist/
+coverage/
 
-# Node dependencies
-node_modules
+### Node dependencies
+node_modules/
 
-# Local data not needed on GitHub
+### Local data & uploads
 .data/
+public/uploads/
 
-# Static assets (optionnel, à ignorer si non versionnés)
-public/
-
-# Logs
+### Logs & misc
 *.log
-
-# Misc
 .DS_Store
 .fleet
 .idea
+*.swp
+*.tmp
+*.bak
 
-# Local env files
+### Env files
 .env
 .env.*
+*.local.*
 !.env.example
