@@ -1,5 +1,5 @@
 <template>
-  <DocShell type="tech" title="Runbook" description="Guide opérationnel et procédures d'urgence">
+  <DocShell type="tech" :title="t('runbook.title')" :description="t('runbook.description')">
     <div class="prose prose-slate max-w-none dark:prose-invert">
       <h1>Runbook opérationnel</h1>
       
@@ -982,16 +982,51 @@ echo "   DNS propagation: ~5 minutes"</code></pre>
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from 'vue'
-  import { useTheme } from '../../composables/useTheme'
-  
-  // Import du système de thème
-  const { initTheme } = useTheme()
-  useHead({ title: 'Runbook - Documentation technique' })
+import { onMounted } from 'vue'
 
-  onMounted(() => {
-    initTheme()
-  })
+// Import du système de thème
+const { initTheme } = useTheme()
+
+// Fonction de traduction utilisant les fichiers JSON i18n
+const route = useRoute()
+const getCurrentLocale = () => {
+  const path = route.path
+  if (path.startsWith('/en')) return 'en'
+  if (path.startsWith('/zh')) return 'zh'
+  return 'fr'
+}
+const locale = getCurrentLocale()
+
+// Fonction de traduction simple
+const t = (key: string) => {
+  const translations: Record<string, Record<string, any>> = {
+    fr: {
+      'runbook': {
+        'title': 'Runbook',
+        'description': 'Procédures opérationnelles et dépannage'
+      }
+    }
+  }
+  
+  const keys = key.split('.')
+  let value = translations[locale]
+  
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = value[k]
+    } else {
+      return key
+    }
+  }
+  
+  return typeof value === 'string' ? value : key
+}
+
+useHead({ title: t('runbook.title') + ' - Documentation technique' })
+
+onMounted(() => {
+  initTheme()
+})
 </script>
 
 

@@ -1,13 +1,12 @@
 <template>
-  <DocShell type="tech" title="Performances" description="Optimisation et tuning pour hautes performances">
+  <DocShell type="tech" :title="t('performance.title')" :description="t('performance.description')">
     <div class="prose prose-slate max-w-none dark:prose-invert">
-      <h1>Optimisation des performances</h1>
+      <h1>{{ t('performance.main_title') }}</h1>
       
       <div class="not-prose bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 rounded-2xl p-8 mb-12 border border-emerald-200/50 dark:border-emerald-800/30">
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">⚡ Performance maximale</h2>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">⚡ {{ t('performance.header.title') }}</h2>
         <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-          Stratégies complètes d'optimisation pour la plateforme de gestion d'entreprise-résidence. 
-          Cache intelligent, optimisation base de données, CDN et techniques avancées pour une expérience utilisateur fluide.
+          {{ t('performance.header.description') }}
         </p>
         <div class="grid md:grid-cols-4 gap-4">
           <div class="bg-white/50 dark:bg-slate-800/50 rounded-xl p-4">
@@ -1251,16 +1250,56 @@ class PerformanceMonitoringService
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from 'vue'
-  import { useTheme } from '../../composables/useTheme'
-  
-  // Import du système de thème
-  const { initTheme } = useTheme()
-  useHead({ title: 'Performances - Documentation technique' })
+import { onMounted } from 'vue'
 
-  onMounted(() => {
-    initTheme()
-  })
+// Import du système de thème
+const { initTheme } = useTheme()
+
+// Fonction de traduction utilisant les fichiers JSON i18n
+const route = useRoute()
+const getCurrentLocale = () => {
+  const path = route.path
+  if (path.startsWith('/en')) return 'en'
+  if (path.startsWith('/zh')) return 'zh'
+  return 'fr'
+}
+const locale = getCurrentLocale()
+
+// Fonction de traduction simple
+const t = (key: string) => {
+  const translations: Record<string, Record<string, any>> = {
+    fr: {
+      'performance': {
+        'title': 'Performances',
+        'description': 'Optimisation et tuning pour hautes performances',
+        'main_title': 'Optimisation des performances',
+        'header': {
+          'title': 'Performance maximale',
+          'description': 'Stratégies complètes d\'optimisation pour la plateforme de gestion d\'entreprise-résidence. Cache intelligent, optimisation base de données, CDN et techniques avancées pour une expérience utilisateur fluide.'
+        }
+      }
+    }
+  }
+  
+  const keys = key.split('.')
+  let value = translations[locale]
+  
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = value[k]
+    } else {
+      return key
+    }
+  }
+  
+  return typeof value === 'string' ? value : key
+}
+
+useHead({ title: t('performance.title') + ' - Documentation technique' })
+
+onMounted(() => {
+  initTheme()
+})
 </script>
 
 

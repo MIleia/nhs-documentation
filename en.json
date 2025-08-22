@@ -1,0 +1,76 @@
+{
+  "home": {
+    "title": "Choose your documentation space",
+    "subtitle": "Two complementary paths designed to optimize your experience. A functional guide for end users and a technical reference detailing architecture, API, and maintenance processes.",
+    "badge": "Modern and scalable platform",
+    "guide": {
+      "title": "User Guide",
+      "subtitle": "For users and functional administrators",
+      "description": "Guided journey with concrete use cases, annotated screenshots, daily best practices, and quick resolution of common issues. A progressive approach to master all features.",
+      "features": {
+        "onboarding": "Onboarding & initial configuration",
+        "users": "User management & rights system",
+        "messaging": "Messaging, scheduling & incident management"
+      },
+      "action": "Access guide"
+    },
+    "technique": {
+      "title": "Technical Reference",
+      "subtitle": "For developers & maintenance teams",
+      "description": "Complete system overview with dual backend architecture, comprehensive API documentation, data models, security, deployment, and technical support operational procedures.",
+      "features": {
+        "architecture": "Architecture & flow diagrams",
+        "api": "API endpoints & authentication",
+        "database": "Database, migrations & runbooks"
+      },
+      "action": "Access reference"
+    },
+    "changelog": {
+      "title": "Platform Evolution",
+      "subtitle": "Track latest improvements and features",
+      "badge": "Recent updates",
+      "v21": {
+        "title": "Complete Customization",
+        "description": "Advanced customization system allowing modification of logos, main colors, and custom texts directly from the administration interface.",
+        "badge": "v2.1.0",
+        "feature": "Major feature",
+        "date": "August 12, 2025"
+      },
+      "v20": {
+        "title": "Revolutionary Architecture",
+        "description": "Complete refactoring to a dual backend architecture. Clear separation between orchestration proxy and business logic for optimal performance and maintainability.",
+        "badge": "v2.0.0",
+        "feature": "Architectural overhaul",
+        "date": "August 10, 2025"
+      },
+      "cta": {
+        "ready": "Ready to get started?",
+        "subtitle": "Explore our detailed guides and start now"
+      }
+    },
+    "support": {
+      "title": "Need help or support?",
+      "subtitle": "Our team of experts is at your disposal to accompany you in your skill development and solve all your technical challenges.",
+      "badge": "Support & Assistance",
+      "chat": {
+        "title": "Real-time Chat",
+        "description": "Immediate assistance via integrated chat with our technical support team",
+        "badge": "Available 24/7"
+      },
+      "email": {
+        "title": "Email Support",
+        "description": "Detailed email assistance with complete documentation and personalized guides",
+        "badge": "Response within 24h"
+      },
+      "expert": {
+        "title": "Expert Accompaniment",
+        "description": "Personalized sessions with our experts for advanced training and complex challenge resolution",
+        "badge": "By appointment"
+      },
+      "contact": {
+        "title": "Contact the team",
+        "subtitle": "Response guaranteed within 24h"
+      }
+    }
+  }
+}

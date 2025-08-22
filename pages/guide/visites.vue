@@ -54,28 +54,93 @@
         </div>
       </div>
 
-      <h3>Visites professionnelles</h3>
-      <p>Interventions de prestataires, livreurs, ou services :</p>
+      <h3>Types de visites supportés</h3>
+      <p>Le système reconnaît trois types principaux de visites :</p>
       
-      <div class="not-prose bg-purple-50 dark:bg-purple-950/20 rounded-xl p-6 my-6 border border-purple-200 dark:border-purple-800/30">
-        <h4 class="font-bold text-purple-800 dark:text-purple-200 mb-4">🔧 Types d'interventions</h4>
+      <div class="not-prose grid md:grid-cols-3 gap-6 my-8">
+        <div class="bg-blue-50 dark:bg-blue-950/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800/30">
+          <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-4">👨‍👩‍👧‍👦 Famille</h4>
+          <ul class="text-sm text-blue-700 dark:text-blue-300 space-y-2">
+            <li>• <strong>Visites régulières</strong> de proches</li>
+            <li>• <strong>Événements familiaux</strong> (anniversaires, fêtes)</li>
+            <li>• <strong>Durée flexible</strong> selon besoins</li>
+            <li>• <strong>Accès facilité</strong> pour visiteurs connus</li>
+            <li>• <strong>Planification récurrente</strong> possible</li>
+          </ul>
+        </div>
+        
+        <div class="bg-purple-50 dark:bg-purple-950/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800/30">
+          <h4 class="font-bold text-purple-800 dark:text-purple-200 mb-4">� Professionnel</h4>
+          <ul class="text-sm text-purple-700 dark:text-purple-300 space-y-2">
+            <li>• <strong>Prestataires de service</strong> autorisés</li>
+            <li>• <strong>Livraisons spécialisées</strong> (médical, équipement)</li>
+            <li>• <strong>Contrôles renforcés</strong> identité et raison</li>
+            <li>• <strong>Badge professionnel</strong> avec zones définies</li>
+            <li>• <strong>Traçabilité complète</strong> intervention</li>
+          </ul>
+        </div>
+        
+        <div class="bg-red-50 dark:bg-red-950/20 rounded-xl p-6 border border-red-200 dark:border-red-800/30">
+          <h4 class="font-bold text-red-800 dark:text-red-200 mb-4">🏥 Médical</h4>
+          <ul class="text-sm text-red-700 dark:text-red-300 space-y-2">
+            <li>• <strong>Personnel soignant</strong> (infirmières, médecins)</li>
+            <li>• <strong>Services d'urgence</strong> (SAMU, pompiers)</li>
+            <li>• <strong>Accès prioritaire</strong> avec validation rapide</li>
+            <li>• <strong>Protocole d'urgence</strong> 24h/24</li>
+            <li>• <strong>Historique médical</strong> confidentiel</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Système de badges intégré</h3>
+      <p>Chaque visite autorisée déclenche l'attribution automatique d'un badge temporaire :</p>
+      
+      <div class="not-prose bg-green-50 dark:bg-green-950/20 rounded-xl p-6 my-6 border border-green-200 dark:border-green-800/30">
+        <h4 class="font-bold text-green-800 dark:text-green-200 mb-4">🏷️ Gestion automatique des badges</h4>
         <div class="grid md:grid-cols-2 gap-4 text-sm">
           <div>
-            <h5 class="font-semibold text-purple-900 dark:text-purple-200 mb-2">Maintenance & Réparations</h5>
-            <ul class="space-y-1 text-purple-700 dark:text-purple-300">
-              <li>• Plombiers, électriciens</li>
-              <li>• Techniciens ascenseurs</li>
-              <li>• Maintenance chauffage</li>
-              <li>• Nettoyage spécialisé</li>
+            <h5 class="font-semibold text-green-900 dark:text-green-200 mb-2">Attribution</h5>
+            <ul class="space-y-1 text-green-700 dark:text-green-300">
+              <li>• <strong>Badge disponible</strong> sélectionné automatiquement</li>
+              <li>• <strong>Zones d'accès</strong> selon type de visite</li>
+              <li>• <strong>Durée limitée</strong> à la durée prévue de visite</li>
+              <li>• <strong>Désactivation auto</strong> en fin de créneau</li>
             </ul>
           </div>
           <div>
-            <h5 class="font-semibold text-purple-900 dark:text-purple-200 mb-2">Services & Livraisons</h5>
-            <ul class="space-y-1 text-purple-700 dark:text-purple-300">
-              <li>• Livraisons colis/repas</li>
-              <li>• Services à domicile</li>
-              <li>• Agents immobiliers</li>
-              <li>• Interventions urgentes</li>
+            <h5 class="font-semibold text-green-900 dark:text-green-200 mb-2">Suivi en temps réel</h5>
+            <ul class="space-y-1 text-green-700 dark:text-green-300">
+              <li>• <strong>Localisation visiteur</strong> dans la résidence</li>
+              <li>• <strong>Historique des accès</strong> par zone</li>
+              <li>• <strong>Alertes de dépassement</strong> de zones autorisées</li>
+              <li>• <strong>Retour badge</strong> obligatoire en fin de visite</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3>Export et planification avancée</h3>
+      <p>Pour faciliter la gestion administrative, le système propose des exports complets :</p>
+      
+      <div class="not-prose bg-amber-50 dark:bg-amber-950/20 rounded-xl p-6 my-6 border border-amber-200 dark:border-amber-800/30">
+        <h4 class="font-bold text-amber-800 dark:text-amber-200 mb-4">📊 Planning PDF exportable</h4>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <h5 class="font-semibold text-amber-900 dark:text-amber-200 mb-2">Formats disponibles</h5>
+            <ul class="space-y-1 text-amber-700 dark:text-amber-300">
+              <li>• <strong>Planning journalier</strong>: Visites du jour</li>
+              <li>• <strong>Vue hebdomadaire</strong>: Semaine complète</li>
+              <li>• <strong>Rapport mensuel</strong>: Synthèse du mois</li>
+              <li>• <strong>Planning par résident</strong>: Focus individuel</li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-semibold text-amber-900 dark:text-amber-200 mb-2">Contenu détaillé</h5>
+            <ul class="space-y-1 text-amber-700 dark:text-amber-300">
+              <li>• <strong>Informations complètes</strong> visiteurs</li>
+              <li>• <strong>Créneaux et durées</strong> prévues</li>
+              <li>• <strong>Type et motif</strong> de chaque visite</li>
+              <li>• <strong>Instructions spéciales</strong> pour gardien</li>
             </ul>
           </div>
         </div>

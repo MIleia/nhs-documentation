@@ -1,0 +1,396 @@
+{
+  "nav": {
+    "home": "Home",
+    "guide": "User Guide",
+    "technique": "Technical Documentation",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Choose your documentation space",
+    "subtitle": "Two complementary paths designed to optimize your experience. A functional guide for end users and a technical reference detailing architecture, API, and maintenance processes.",
+    "badge": "Modern & scalable platform",
+    "guide": {
+      "title": "User Guide",
+      "description": "Guided journey with concrete use cases, annotated screenshots, daily best practices, and quick resolution of common issues. A progressive approach to master all features.",
+      "action": "Access guide"
+    },
+    "technique": {
+      "title": "Technical Reference",
+      "description": "Complete system overview with dual backend architecture, comprehensive API documentation, data models, security, deployment, and technical support operational procedures.",
+      "action": "Access reference"
+    },
+    "changelog": {
+      "title": "Platform Evolution",
+      "subtitle": "Track latest improvements and features",
+      "badge": "Recent updates",
+      "v21": {
+        "title": "Complete Customization",
+        "description": "Advanced customization system allowing modification of logos, main colors, and custom texts directly from the administration interface.",
+        "badge": "Major feature"
+      },
+      "v20": {
+        "title": "Revolutionary Architecture",
+        "description": "Complete refactoring to a dual backend architecture. Clear separation between orchestration proxy and business logic for optimal performance and maintainability.",
+        "badge": "Architectural overhaul"
+      }
+    },
+    "support": {
+      "title": "Need help or support?",
+      "subtitle": "Our team of experts is at your disposal to accompany you in your skill development and solve all your technical challenges.",
+      "badge": "Support & Assistance",
+      "chat": {
+        "title": "Real-time Chat",
+        "description": "Immediate assistance via integrated chat with our technical support team",
+        "badge": "Available 24/7"
+      },
+      "email": {
+        "title": "Email Support",
+        "description": "Detailed email assistance with complete documentation and personalized guides",
+        "badge": "Response within 24h"
+      },
+      "training": {
+        "title": "Training Sessions",
+        "description": "Personalized video conference training to master all advanced features",
+        "badge": "By appointment"
+      },
+      "contact": {
+        "title": "Contact our team",
+        "email": "support{at}neostart.tech"
+      }
+    },
+    "cta": {
+      "ready": "Ready to start?",
+      "explore": "Explore our detailed guides and get started now"
+    }
+  },
+  "guide": {
+    "title": "User Guide",
+    "subtitle": "Complete documentation for users",
+    "navigation": "Quick navigation",
+    "sections": {
+      "onboarding": {
+        "title": "First Steps",
+        "description": "Interface discovery and essential first actions",
+        "action": "Start"
+      },
+      "users": {
+        "title": "User Management",
+        "description": "Creation, modification, and management of user accounts",
+        "action": "Manage"
+      },
+      "messaging": {
+        "title": "Messaging",
+        "description": "Effective communication between residents and administration",
+        "action": "Communicate"
+      },
+      "visits": {
+        "title": "Visit Management",
+        "description": "Planning and tracking of visits and appointments",
+        "action": "Plan"
+      },
+      "incidents": {
+        "title": "Incident Management",
+        "description": "Reporting and tracking of problems and incidents",
+        "action": "Report"
+      },
+      "administration": {
+        "title": "Administration",
+        "description": "Advanced functions for system administrators",
+        "action": "Administrate"
+      }
+    }
+  },
+  "technique": {
+    "title": "Complete Technical Documentation",
+    "subtitle": "Complete reference for developers and system administrators",
+    "description": "Architecture, API, operations & maintenance",
+    "overview": {
+      "title": "Technical overview",
+      "description": "This documentation is aimed at development, DevOps and technical support teams. It describes the innovative dual backend architecture, data flows, complete API, database and operational procedures.",
+      "architecture": {
+        "title": "Architecture",
+        "description": "Dual backend: Backend-Client (proxy + DB) + Backend-NHS (business logic)"
+      },
+      "technologies": {
+        "title": "Technologies",
+        "description": "Nuxt.js 3.18, Laravel 11, MySQL, Docker, Sanctum"
+      }
+    },
+    "architecture": {
+      "title": "System Architecture",
+      "overview": {
+        "title": "Overview",
+        "description": "The application uses an innovative microservices architecture with 2 specialized backends:"
+      },
+      "backend_client": {
+        "title": "Backend-Client (Port 8000)",
+        "role": "Smart proxy + Direct database access",
+        "responsibilities": "Responsibilities:",
+        "features": {
+          "auth": "Local authentication with Laravel Sanctum",
+          "database": "Direct access to MySQL database",
+          "files": "File and upload management",
+          "proxy": "Transparent proxy to Backend-NHS",
+          "settings": "Application settings management (logos, colors)"
+        },
+        "technologies": "Laravel 11, MySQL, Sanctum"
+      },
+      "backend_nhs": {
+        "title": "Backend-NHS (Port 8001)",
+        "role": "Complete business logic and proprietary features",
+        "responsibilities": "Responsibilities:",
+        "features": {
+          "business": "Business logic and business rules",
+          "validation": "Complex data validation",
+          "proprietary": "NHS proprietary features",
+          "api": "Business API endpoints",
+          "analytics": "Advanced analytics and reporting"
+        },
+        "technologies": "Laravel 11, REST API"
+      },
+      "frontend": {
+        "title": "Frontend (Port 3000/3001)",
+        "technologies": "Nuxt.js 3.18, Vue.js 3, TypeScript, Tailwind CSS",
+        "features": {
+          "responsive": "Modern responsive user interface",
+          "theme": "Theme system (light/dark)",
+          "i18n": "Internationalization (fr, en, zh)",
+          "pwa": "PWA and performance optimizations",
+          "stores": "Pinia stores for state management"
+        }
+      }
+    },
+    "api": {
+      "title": "API Documentation",
+      "base_urls": {
+        "title": "Base URLs",
+        "backend_client": "Backend-Client:",
+        "backend_nhs_proxy": "Backend-NHS (via proxy):",
+        "backend_nhs_direct": "Backend-NHS (direct):"
+      },
+      "auth": {
+        "title": "Authentication",
+        "description": "The system uses Laravel Sanctum for token-based authentication.",
+        "login": {
+          "title": "Login",
+          "returns": "Returns: access_token, user data, expires_at"
+        },
+        "headers": "Authentication headers"
+      },
+      "endpoints": {
+        "title": "Main Endpoints",
+        "users": {
+          "title": "User management",
+          "get_user": "Connected user information",
+          "get_persons": "List of persons (admin)",
+          "create_person": "Create a person",
+          "update_person": "Update a person",
+          "delete_person": "Delete a person"
+        },
+        "badges": {
+          "title": "Badge management",
+          "list": "List of badges",
+          "toggle_status": "Change badge status"
+        },
+        "messaging": {
+          "title": "Messaging",
+          "conversations": "List of conversations",
+          "create_conversation": "Create a conversation",
+          "messages": "Messages from a group",
+          "send_message": "Send a message"
+        },
+        "incidents": {
+          "title": "Incident management",
+          "list": "List of incidents",
+          "create": "Create an incident",
+          "update": "Update an incident"
+        }
+      }
+    },
+    "database": {
+      "title": "Database",
+      "model": {
+        "title": "Data model",
+        "description": "The gestion_entreprise_residence database uses MySQL with UTF8MB4 charset to support emojis and international characters."
+      },
+      "tables": {
+        "title": "Main tables",
+        "personne": {
+          "title": "personne",
+          "description": "Central table containing all users (admins, guards, residents, guests)"
+        },
+        "roles": {
+          "title": "admin, gardien, resident",
+          "description": "Specialization tables with FK to personne"
+        },
+        "badge": {
+          "title": "badge",
+          "description": "Physical access badge management"
+        },
+        "message": {
+          "title": "message, groupe_message",
+          "description": "Internal messaging system with groups"
+        },
+        "incident": {
+          "title": "incident",
+          "description": "Incident and report management"
+        }
+      },
+      "test_accounts": {
+        "title": "Test accounts",
+        "admin": {
+          "title": "Main administrator",
+          "email": "Email:",
+          "password": "Password:",
+          "role": "Role:",
+          "badge": "Badge:"
+        }
+      }
+    },
+    "deployment": {
+      "title": "Deployment",
+      "requirements": {
+        "title": "Prerequisites"
+      },
+      "installation": {
+        "title": "Local installation"
+      },
+      "environment": {
+        "title": "Environment variables",
+        "backend_client": "Backend-Client (.env)",
+        "backend_nhs": "Backend-NHS (.env)"
+      }
+    },
+    "security": {
+      "title": "Security",
+      "auth": {
+        "title": "Authentication",
+        "sanctum": "Secure SPA tokens",
+        "hash": "Hash passwords: bcrypt with automatic salt",
+        "rate_limiting": "Brute force protection",
+        "cors": "Restrictive configuration"
+      },
+      "validation": {
+        "title": "Data validation",
+        "server": "Server-side validation on all endpoints",
+        "sanitization": "User input sanitization",
+        "protection": "XSS and SQL injection protection",
+        "upload": "Secure file upload with MIME verification"
+      },
+      "monitoring": {
+        "title": "Logs and monitoring",
+        "table": "Logs table for action traceability",
+        "laravel": "Laravel logs in storage/logs/",
+        "proxy": "Proxy request monitoring",
+        "alerts": "Critical error alerts"
+      }
+    },
+    "maintenance": {
+      "title": "Maintenance & Operations",
+      "commands": {
+        "title": "Useful commands"
+      },
+      "monitoring": {
+        "title": "Service monitoring",
+        "backend_client": "Backend-Client health check:",
+        "backend_nhs": "Backend-NHS health check:"
+      },
+      "backup": {
+        "title": "Backup",
+        "database": "Daily mysqldump",
+        "files": "rsync of storage and public folders",
+        "config": "backup of .env files"
+      },
+      "performance": {
+        "title": "Performance",
+        "cache": "Redis cache for sessions (optional)",
+        "optimization": "Query optimization with MySQL indexes",
+        "compression": "gzip/brotli compression",
+        "cdn": "CDN for static assets"
+      }
+    },
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      "common_issues": {
+        "title": "Common issues",
+        "nhs_connection": {
+          "title": "Backend-NHS connection error",
+          "symptom": "NHS Backend unavailable",
+          "checks": "Checks:",
+          "solutions": [
+            "Backend-NHS running on port 8001",
+            "NHS_API_URL variable correct in backend-client",
+            "Firewall/antivirus not blocking the port"
+          ]
+        },
+        "auth_error": {
+          "title": "Authentication error",
+          "symptom": "Unauthenticated",
+          "solutions": [
+            "Check Bearer token in header",
+            "Check token expiration",
+            "Reset user session"
+          ]
+        }
+      },
+      "debug_logs": {
+        "title": "Debug logs"
+      }
+    },
+    "support": {
+      "title": "Technical Support",
+      "contact": {
+        "title": "Technical team contact",
+        "urgent": {
+          "title": "Technical emergencies",
+          "email": "Email: tech-urgent@neostart.tech",
+          "availability": "Availability: 24/7",
+          "sla": "SLA: 2h maximum"
+        },
+        "development": {
+          "title": "Development support",
+          "email": "Email: dev-support@neostart.tech",
+          "hours": "Hours: 9am-6pm (CET)",
+          "docs": "Documentation: docs.neostart.tech"
+        }
+      }
+    },
+    "version": {
+      "doc_version": "Documentation version:",
+      "last_update": "Last update:",
+      "architecture": "Architecture:"
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "Optimization and tuning for high performance",
+      "main_title": "Performance optimization",
+      "header": {
+        "title": "Maximum performance",
+        "description": "Complete optimization strategies for the enterprise-residence management platform. Intelligent cache, database optimization, CDN and advanced techniques for a smooth user experience."
+      }
+    },
+    "observability": {
+      "title": "Observability",
+      "description": "System monitoring and observability"
+    },
+    "runbook": {
+      "title": "Runbook",
+      "description": "Operational procedures and troubleshooting"
+    },
+    "tests": {
+      "title": "Tests",
+      "description": "Testing strategy and quality"
+    },
+    "conventions": {
+      "title": "Conventions",
+      "description": "Development standards and conventions"
+    }
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "dark": "Dark mode",
+    "light": "Light mode"
+  }
+}
+
+

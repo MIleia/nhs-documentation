@@ -29,6 +29,8 @@
           <span class="font-bold text-lg text-gray-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Documentation</span>
         </NuxtLink>
         <div class="hidden sm:flex items-center gap-4">
+          <!-- Sélecteur de langue -->
+          <LanguageSelector />
           <!-- Bouton de basculement de thème -->
           <ThemeToggle variant="small" :show-text="true" />
           <div class="px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 bg-gray-100/80 dark:bg-slate-800/80 rounded-full border border-gray-200/50 dark:border-slate-700/50 backdrop-blur-sm">v2.1.0</div>
@@ -38,6 +40,7 @@
         </div>
         <!-- Version mobile du bouton thème -->
         <div class="flex sm:hidden items-center gap-3">
+          <LanguageSelector />
           <ThemeToggle variant="large" :show-text="false" />
           <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
             <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
@@ -54,14 +57,14 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364-.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
-            Plateforme moderne & évolutive
+            {{ t('home.badge') }}
             <div class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
           </div>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 dark:text-white mb-8 leading-[1.05]">
-            Choisissez votre espace de <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">documentation</span>
+            {{ t('home.title') }}
           </h1>
           <p class="text-xl md:text-2xl text-gray-600 dark:text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
-            Deux parcours complémentaires conçus pour optimiser votre expérience. Un guide fonctionnel orienté utilisateur final et une référence technique détaillant l'architecture, l'API et les processus de maintenance.
+            {{ t('home.subtitle') }}
           </p>
         </div>
 
@@ -81,12 +84,12 @@
                   <div class="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full animate-pulse"></div>
                 </div>
                 <div class="flex-1">
-                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Guide d'utilisation</h2>
-                  <p class="text-sm font-semibold text-blue-600/90 dark:text-blue-400/90 uppercase tracking-wider">Pour les utilisateurs et administrateurs fonctionnels</p>
+                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{{ t('home.guide.title') }}</h2>
+                  <p class="text-sm font-semibold text-blue-600/90 dark:text-blue-400/90 uppercase tracking-wider">{{ t('home.guide.subtitle') }}</p>
                 </div>
               </div>
               <p class="relative text-gray-600 dark:text-slate-300 leading-relaxed flex-1 text-base mb-8">
-                Parcours guidé avec cas d'usage concrets, captures d'écran annotées, bonnes pratiques quotidiennes et résolution rapide des problèmes courants. Une approche progressive pour maîtriser toutes les fonctionnalités.
+                {{ t('home.guide.description') }}
               </p>
               <div class="relative space-y-3 mb-10">
                 <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-slate-400">
@@ -103,7 +106,7 @@
                 </div>
               </div>
               <div class="relative flex items-center gap-3 text-blue-600 dark:text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-500">
-                <span>Accéder au guide</span>
+                <span>{{ t('home.guide.action') }}</span>
                 <svg class="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -126,12 +129,12 @@
                   <div class="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-orange-400 to-red-500 rounded-full animate-pulse"></div>
                 </div>
                 <div class="flex-1">
-                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Référence technique</h2>
-                  <p class="text-sm font-semibold text-purple-600/90 dark:text-purple-400/90 uppercase tracking-wider">Pour développeurs & équipes de maintenance</p>
+                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{{ t('home.technique.title') }}</h2>
+                  <p class="text-sm font-semibold text-purple-600/90 dark:text-purple-400/90 uppercase tracking-wider">{{ t('home.technique.subtitle') }}</p>
                 </div>
               </div>
               <p class="relative text-gray-600 dark:text-slate-300 leading-relaxed flex-1 text-base mb-8">
-                Vision système complète avec architecture dual backend, documentation API exhaustive, modèles de données, sécurité, déploiement et procédures opérationnelles de support technique.
+                {{ t('home.technique.description') }}
               </p>
               <div class="relative space-y-3 mb-10">
                 <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-slate-400">
@@ -148,7 +151,7 @@
                 </div>
               </div>
               <div class="relative flex items-center gap-3 text-purple-600 dark:text-purple-400 font-semibold group-hover:translate-x-2 transition-transform duration-500">
-                <span>Accéder à la référence</span>
+                <span>{{ t('home.technique.action') }}</span>
                 <svg class="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -162,10 +165,10 @@
           <div class="text-center mb-16">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50 text-emerald-700 dark:text-emerald-300 rounded-full text-sm font-semibold mb-6 border border-emerald-200/60 dark:border-emerald-800/60">
               <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-              Mises à jour récentes
+              {{ t('home.changelog.badge') }}
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Évolution de la plateforme</h2>
-            <p class="text-gray-600 dark:text-slate-300 text-lg">Suivi des dernières améliorations et fonctionnalités</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ t('home.changelog.title') }}</h2>
+            <p class="text-gray-600 dark:text-slate-300 text-lg">{{ t('home.changelog.subtitle') }}</p>
           </div>
           <div class="grid sm:grid-cols-2 gap-8">
             <div class="group relative rounded-3xl border border-gray-200/70 dark:border-slate-700/70 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 dark:from-slate-900 dark:via-slate-800/50 dark:to-slate-800/30 p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden">
@@ -183,18 +186,18 @@
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>
-                  12 Août 2025
+                  {{ t('home.changelog.v21.date') }}
                 </div>
               </div>
-              <h3 class="relative text-xl font-bold text-gray-800 dark:text-white mb-4">Personnalisation complète</h3>
+              <h3 class="relative text-xl font-bold text-gray-800 dark:text-white mb-4">{{ t('home.changelog.v21.title') }}</h3>
               <p class="relative text-sm text-gray-600 dark:text-slate-300 leading-relaxed mb-6">
-                Système de personnalisation avancé permettant la modification des logos, couleurs principales et textes personnalisés directement depuis l'interface d'administration.
+                {{ t('home.changelog.v21.description') }}
               </p>
               <div class="relative flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Fonctionnalité majeure
+                {{ t('home.changelog.v21.feature') }}
               </div>
             </div>
             
@@ -213,18 +216,18 @@
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>
-                  10 Août 2025
+                  {{ t('home.changelog.v20.date') }}
                 </div>
               </div>
-              <h3 class="relative text-xl font-bold text-gray-800 dark:text-white mb-4">Architecture révolutionnaire</h3>
+              <h3 class="relative text-xl font-bold text-gray-800 dark:text-white mb-4">{{ t('home.changelog.v20.title') }}</h3>
               <p class="relative text-sm text-gray-600 dark:text-slate-300 leading-relaxed mb-6">
-                Refactorisation complète vers une architecture dual backend. Séparation claire entre proxy d'orchestration et logique métier pour une performance et maintenabilité optimales.
+                {{ t('home.changelog.v20.description') }}
               </p>
               <div class="relative flex items-center gap-2 text-purple-600 dark:text-purple-400 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
-                Refonte architecturale
+                {{ t('home.changelog.v20.feature') }}
               </div>
             </div>
           </div>
@@ -238,8 +241,8 @@
                 </svg>
               </div>
               <div class="text-left">
-                <p class="font-bold text-gray-900 dark:text-white text-lg">Prêt à démarrer ?</p>
-                <p class="text-sm text-gray-600 dark:text-slate-300">Explorez nos guides détaillés et commencez dès maintenant</p>
+                <p class="font-bold text-gray-900 dark:text-white text-lg">{{ t('home.changelog.cta.ready') }}</p>
+                <p class="text-sm text-gray-600 dark:text-slate-300">{{ t('home.changelog.cta.subtitle') }}</p>
               </div>
               <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></div>
             </div>
@@ -264,14 +267,14 @@
                   <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                   <div class="absolute inset-0 w-3 h-3 bg-blue-500 rounded-full animate-ping opacity-75"></div>
                 </div>
-                Support & Assistance
+                {{ t('home.support.badge') }}
               </div>
               
               <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
-                Besoin d'aide ou d'accompagnement ?
+                {{ t('home.support.title') }}
               </h2>
               <p class="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Notre équipe d'experts est à votre disposition pour vous accompagner dans votre montée en compétences et résoudre tous vos défis techniques.
+                {{ t('home.support.subtitle') }}
               </p>
               
               <!-- Support options grid améliorée -->
@@ -366,11 +369,128 @@
         </div>
       </div>
     </main>
+    
+    <!-- Footer de page -->
+    <PageFooter />
   </div>
 </template>
 
 <script setup lang="ts">
 import { useTheme } from '../composables/useTheme'
+
+// Fonction de traduction simple basée sur l'URL
+const route = useRoute()
+
+const getCurrentLocale = () => {
+  const path = route.path
+  if (path.startsWith('/en')) return 'en'
+  if (path.startsWith('/zh')) return 'zh'
+  return 'fr'
+}
+
+const t = (key: string) => {
+  const locale = getCurrentLocale()
+  const translations = {
+    fr: {
+      'home.badge': 'Plateforme moderne et évolutive',
+      'home.title': 'Choisissez votre espace de documentation',
+      'home.subtitle': 'Deux parcours complémentaires conçus pour optimiser votre expérience. Un guide fonctionnel pour les utilisateurs finaux et une référence technique détaillant architecture, API et processus de maintenance.',
+      'home.guide.title': 'Guide d\'utilisation',
+      'home.guide.subtitle': 'Pour les utilisateurs et administrateurs fonctionnels',
+      'home.guide.description': 'Parcours guidé avec cas d\'usage concrets, captures d\'écran annotées, bonnes pratiques quotidiennes et résolution rapide des problèmes courants. Une approche progressive pour maîtriser toutes les fonctionnalités.',
+      'home.guide.action': 'Accéder au guide',
+      'home.technique.title': 'Référence technique',
+      'home.technique.subtitle': 'Pour développeurs & équipes de maintenance',
+      'home.technique.description': 'Vision système complète avec architecture dual backend, documentation API exhaustive, modèles de données, sécurité, déploiement et procédures opérationnelles de support technique.',
+      'home.technique.action': 'Accéder à la référence',
+      'home.changelog.badge': 'Mises à jour récentes',
+      'home.changelog.title': 'Évolution de la plateforme',
+      'home.changelog.subtitle': 'Suivi des dernières améliorations et fonctionnalités',
+      'home.changelog.v21.title': 'Personnalisation complète',
+      'home.changelog.v21.description': 'Système de personnalisation avancé permettant la modification des logos, couleurs principales et textes personnalisés directement depuis l\'interface d\'administration.',
+      'home.changelog.v21.feature': 'Fonctionnalité majeure',
+      'home.changelog.v21.date': '12 Août 2025',
+      'home.changelog.v20.title': 'Architecture révolutionnaire',
+      'home.changelog.v20.description': 'Refactorisation complète vers une architecture dual backend. Séparation claire entre proxy d\'orchestration et logique métier pour une performance et maintenabilité optimales.',
+      'home.changelog.v20.feature': 'Refonte architecturale',
+      'home.changelog.v20.date': '10 Août 2025',
+      'home.changelog.cta.ready': 'Prêt à démarrer ?',
+      'home.changelog.cta.subtitle': 'Explorez nos guides détaillés et commencez dès maintenant',
+      'home.support.title': 'Besoin d\'aide ou d\'accompagnement ?',
+      'home.support.subtitle': 'Notre équipe d\'experts est à votre disposition pour vous accompagner dans votre montée en compétences et résoudre tous vos défis techniques.',
+      'home.support.badge': 'Support & Assistance',
+      'footer.copyright': '© 2025',
+      'footer.company': 'NeoStart.tech',
+      'footer.rights': 'Tous droits réservés.'
+    },
+    en: {
+      'home.badge': 'Modern and scalable platform',
+      'home.title': 'Choose your documentation space',
+      'home.subtitle': 'Two complementary paths designed to optimize your experience. A functional guide for end users and a technical reference detailing architecture, API, and maintenance processes.',
+      'home.guide.title': 'User Guide',
+      'home.guide.subtitle': 'For users and functional administrators',
+      'home.guide.description': 'Guided journey with concrete use cases, annotated screenshots, daily best practices, and quick resolution of common issues. A progressive approach to master all features.',
+      'home.guide.action': 'Access guide',
+      'home.technique.title': 'Technical Reference',
+      'home.technique.subtitle': 'For developers & maintenance teams',
+      'home.technique.description': 'Complete system overview with dual backend architecture, comprehensive API documentation, data models, security, deployment, and technical support operational procedures.',
+      'home.technique.action': 'Access reference',
+      'home.changelog.badge': 'Recent updates',
+      'home.changelog.title': 'Platform Evolution',
+      'home.changelog.subtitle': 'Track latest improvements and features',
+      'home.changelog.v21.title': 'Complete Customization',
+      'home.changelog.v21.description': 'Advanced customization system allowing modification of logos, main colors, and custom texts directly from the administration interface.',
+      'home.changelog.v21.feature': 'Major feature',
+      'home.changelog.v21.date': 'August 12, 2025',
+      'home.changelog.v20.title': 'Revolutionary Architecture',
+      'home.changelog.v20.description': 'Complete refactoring to a dual backend architecture. Clear separation between orchestration proxy and business logic for optimal performance and maintainability.',
+      'home.changelog.v20.feature': 'Architectural overhaul',
+      'home.changelog.v20.date': 'August 10, 2025',
+      'home.changelog.cta.ready': 'Ready to get started?',
+      'home.changelog.cta.subtitle': 'Explore our detailed guides and start now',
+      'home.support.title': 'Need help or support?',
+      'home.support.subtitle': 'Our team of experts is at your disposal to accompany you in your skill development and solve all your technical challenges.',
+      'home.support.badge': 'Support & Assistance',
+      'footer.copyright': '© 2025',
+      'footer.company': 'NeoStart.tech',
+      'footer.rights': 'All rights reserved.'
+    },
+    zh: {
+      'home.badge': '现代化可扩展平台',
+      'home.title': '选择您的文档空间',
+      'home.subtitle': '两条互补路径，旨在优化您的体验。为最终用户提供功能指南，为技术人员提供详细的架构、API 和维护流程参考。',
+      'home.guide.title': '使用指南',
+      'home.guide.subtitle': '面向用户和功能管理员',
+      'home.guide.description': '通过具体使用案例、注释截图、日常最佳实践和常见问题快速解决方案的引导式学习。渐进式方法掌握所有功能。',
+      'home.guide.action': '访问指南',
+      'home.technique.title': '技术参考',
+      'home.technique.subtitle': '面向开发人员和维护团队',
+      'home.technique.description': '包含双后端架构的完整系统概述、全面的 API 文档、数据模型、安全性、部署和技术支持操作程序。',
+      'home.technique.action': '访问参考',
+      'home.changelog.badge': '最近更新',
+      'home.changelog.title': '平台演进',
+      'home.changelog.subtitle': '跟踪最新改进和功能',
+      'home.changelog.v21.title': '完整定制',
+      'home.changelog.v21.description': '高级定制系统，允许直接从管理界面修改徽标、主要颜色和自定义文本。',
+      'home.changelog.v21.feature': '主要功能',
+      'home.changelog.v21.date': '2025年8月12日',
+      'home.changelog.v20.title': '革命性架构',
+      'home.changelog.v20.description': '完全重构为双后端架构。编排代理和业务逻辑之间的清晰分离，实现最佳性能和可维护性。',
+      'home.changelog.v20.feature': '架构改革',
+      'home.changelog.v20.date': '2025年8月10日',
+      'home.changelog.cta.ready': '准备开始了吗？',
+      'home.changelog.cta.subtitle': '探索我们的详细指南并立即开始',
+      'home.support.title': '需要帮助或支持？',
+      'home.support.subtitle': '我们的专家团队随时为您提供技能发展指导，解决所有技术挑战。',
+      'home.support.badge': '支持与协助',
+      'footer.copyright': '© 2025',
+      'footer.company': 'NeoStart.tech',
+      'footer.rights': '版权所有。'
+    }
+  }
+  
+  return translations[locale]?.[key] || key
+}
 
 definePageMeta({ layout: false })
 
@@ -390,14 +510,3 @@ useHead({
   ]
 })
 </script>
-
-<style scoped>
-  /* Effet focus accessible sur les cartes */
-  a:focus-visible {
-    outline: 2px solid #6366f1;
-    outline-offset: 4px;
-    border-radius: 1rem;
-  }
-</style>
-
-

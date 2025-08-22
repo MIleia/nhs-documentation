@@ -1,5 +1,5 @@
 <template>
-  <DocShell type="tech" title="Maintenance" description="Procédures de maintenance et gestion système">
+  <DocShell type="tech" :title="t('maintenance.title')" :description="t('maintenance.description')">
     <div class="prose prose-slate max-w-none dark:prose-invert">
       <h1>Guide de maintenance</h1>
       
@@ -1137,16 +1137,51 @@ curl -X POST "$SLACK_WEBHOOK_URL" \
 </template>
 
 <script setup lang="ts">
-    import { onMounted } from 'vue'
-    import { useTheme } from '../../composables/useTheme'
-    
-    // Import du système de thème
-    const { initTheme } = useTheme()
-    useHead({ title: 'Maintenance - Documentation technique' })
+import { onMounted } from 'vue'
 
-    onMounted(() => {
-        initTheme()
-    })
+// Import du système de thème
+const { initTheme } = useTheme()
+
+// Fonction de traduction utilisant les fichiers JSON i18n
+const route = useRoute()
+const getCurrentLocale = () => {
+  const path = route.path
+  if (path.startsWith('/en')) return 'en'
+  if (path.startsWith('/zh')) return 'zh'
+  return 'fr'
+}
+const locale = getCurrentLocale()
+
+// Fonction de traduction simple
+const t = (key: string) => {
+  const translations: Record<string, Record<string, any>> = {
+    fr: {
+      'maintenance': {
+        'title': 'Maintenance',
+        'description': 'Guide de maintenance et opérations'
+      }
+    }
+  }
+  
+  const keys = key.split('.')
+  let value = translations[locale]
+  
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = value[k]
+    } else {
+      return key
+    }
+  }
+  
+  return typeof value === 'string' ? value : key
+}
+
+useHead({ title: t('maintenance.title') + ' - Documentation technique' })
+
+onMounted(() => {
+  initTheme()
+})
 </script>
 
 

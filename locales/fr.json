@@ -1,0 +1,396 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "guide": "Guide utilisateur",
+    "technique": "Documentation technique",
+    "language": "Langue"
+  },
+  "home": {
+    "title": "Choisissez votre espace de documentation",
+    "subtitle": "Deux parcours complémentaires conçus pour optimiser votre expérience. Un guide fonctionnel orienté utilisateur final et une référence technique détaillant l'architecture, l'API et les processus de maintenance.",
+    "badge": "Plateforme moderne & évolutive",
+    "guide": {
+      "title": "Guide d'utilisation",
+      "description": "Parcours guidé avec cas d'usage concrets, captures d'écran annotées, bonnes pratiques quotidiennes et résolution rapide des problèmes courants. Une approche progressive pour maîtriser toutes les fonctionnalités.",
+      "action": "Accéder au guide"
+    },
+    "technique": {
+      "title": "Référence technique",
+      "description": "Vision système complète avec architecture dual backend, documentation API exhaustive, modèles de données, sécurité, déploiement et procédures opérationnelles de support technique.",
+      "action": "Accéder à la référence"
+    },
+    "changelog": {
+      "title": "Évolution de la plateforme",
+      "subtitle": "Suivi des dernières améliorations et fonctionnalités",
+      "badge": "Mises à jour récentes",
+      "v21": {
+        "title": "Personnalisation complète",
+        "description": "Système de personnalisation avancé permettant la modification des logos, couleurs principales et textes personnalisés directement depuis l'interface d'administration.",
+        "badge": "Fonctionnalité majeure"
+      },
+      "v20": {
+        "title": "Architecture révolutionnaire",
+        "description": "Refactorisation complète vers une architecture dual backend. Séparation claire entre proxy d'orchestration et logique métier pour une performance et maintenabilité optimales.",
+        "badge": "Refonte architecturale"
+      }
+    },
+    "support": {
+      "title": "Besoin d'aide ou d'accompagnement ?",
+      "subtitle": "Notre équipe d'experts est à votre disposition pour vous accompagner dans votre montée en compétences et résoudre tous vos défis techniques.",
+      "badge": "Support & Assistance",
+      "chat": {
+        "title": "Chat en temps réel",
+        "description": "Assistance immédiate via chat intégré avec notre équipe support technique",
+        "badge": "Disponible 24h/24"
+      },
+      "email": {
+        "title": "Support par email",
+        "description": "Assistance détaillée par email avec documentation complète et guides personnalisés",
+        "badge": "Réponse sous 24h"
+      },
+      "training": {
+        "title": "Sessions de formation",
+        "description": "Formations personnalisées en visioconférence pour maîtriser toutes les fonctionnalités avancées",
+        "badge": "Sur rendez-vous"
+      },
+      "contact": {
+        "title": "Contactez notre équipe",
+        "email": "support{at}neostart.tech"
+      }
+    },
+    "cta": {
+      "ready": "Prêt à démarrer ?",
+      "explore": "Explorez nos guides détaillés et commencez dès maintenant"
+    }
+  },
+  "guide": {
+    "title": "Guide d'utilisation",
+    "subtitle": "Documentation complète pour les utilisateurs",
+    "navigation": "Navigation rapide",
+    "sections": {
+      "onboarding": {
+        "title": "Premier pas",
+        "description": "Découverte de l'interface et premières actions essentielles",
+        "action": "Commencer"
+      },
+      "users": {
+        "title": "Gestion des utilisateurs",
+        "description": "Création, modification et gestion des comptes utilisateurs",
+        "action": "Gérer"
+      },
+      "messaging": {
+        "title": "Messagerie",
+        "description": "Communication efficace entre les résidents et l'administration",
+        "action": "Communiquer"
+      },
+      "visits": {
+        "title": "Gestion des visites",
+        "description": "Planification et suivi des visites et rendez-vous",
+        "action": "Planifier"
+      },
+      "incidents": {
+        "title": "Gestion des incidents",
+        "description": "Signalement et suivi des problèmes et incidents",
+        "action": "Signaler"
+      },
+      "administration": {
+        "title": "Administration",
+        "description": "Fonctions avancées pour les administrateurs système",
+        "action": "Administrer"
+      }
+    }
+  },
+  "technique": {
+    "title": "Documentation Technique Complète",
+    "subtitle": "Référence complète pour les développeurs et administrateurs système",
+    "description": "Architecture, API, opérations & maintenance",
+    "overview": {
+      "title": "Vue d'ensemble technique",
+      "description": "Cette documentation s'adresse aux équipes de développement, DevOps et support technique. Elle décrit l'architecture dual backend innovante, les flux de données, l'API complète, la base de données et les procédures opérationnelles.",
+      "architecture": {
+        "title": "Architecture",
+        "description": "Dual backend : Backend-Client (proxy + DB) + Backend-NHS (logique métier)"
+      },
+      "technologies": {
+        "title": "Technologies",
+        "description": "Nuxt.js 3.18, Laravel 11, MySQL, Docker, Sanctum"
+      }
+    },
+    "architecture": {
+      "title": "Architecture Système",
+      "overview": {
+        "title": "Vue d'ensemble",
+        "description": "L'application utilise une architecture innovante en microservices avec 2 backends spécialisés :"
+      },
+      "backend_client": {
+        "title": "Backend-Client (Port 8000)",
+        "role": "Proxy intelligent + Accès direct base de données",
+        "responsibilities": "Responsabilités :",
+        "features": {
+          "auth": "Authentification locale avec Laravel Sanctum",
+          "database": "Accès direct à la base de données MySQL",
+          "files": "Gestion des fichiers et uploads",
+          "proxy": "Proxy transparent vers Backend-NHS",
+          "settings": "Gestion des paramètres d'application (logos, couleurs)"
+        },
+        "technologies": "Laravel 11, MySQL, Sanctum"
+      },
+      "backend_nhs": {
+        "title": "Backend-NHS (Port 8001)",
+        "role": "Logique métier complète et fonctionnalités propriétaires",
+        "responsibilities": "Responsabilités :",
+        "features": {
+          "business": "Business logic et règles métier",
+          "validation": "Validation des données complexes",
+          "proprietary": "Fonctionnalités NHS propriétaires",
+          "api": "API endpoints métier",
+          "analytics": "Analytics et reporting avancé"
+        },
+        "technologies": "Laravel 11, API REST"
+      },
+      "frontend": {
+        "title": "Frontend (Port 3000/3001)",
+        "technologies": "Nuxt.js 3.18, Vue.js 3, TypeScript, Tailwind CSS",
+        "features": {
+          "responsive": "Interface utilisateur responsive et moderne",
+          "theme": "Système de thème (clair/sombre)",
+          "i18n": "Internationalisation (fr, en, zh)",
+          "pwa": "PWA et optimisations performance",
+          "stores": "Stores Pinia pour la gestion d'état"
+        }
+      }
+    },
+    "api": {
+      "title": "Documentation API",
+      "base_urls": {
+        "title": "Base URLs",
+        "backend_client": "Backend-Client :",
+        "backend_nhs_proxy": "Backend-NHS (via proxy) :",
+        "backend_nhs_direct": "Backend-NHS (direct) :"
+      },
+      "auth": {
+        "title": "Authentification",
+        "description": "Le système utilise Laravel Sanctum pour l'authentification token-based.",
+        "login": {
+          "title": "Login",
+          "returns": "Retourne : access_token, user data, expires_at"
+        },
+        "headers": "Headers d'authentification"
+      },
+      "endpoints": {
+        "title": "Endpoints Principaux",
+        "users": {
+          "title": "Gestion des utilisateurs",
+          "get_user": "Informations utilisateur connecté",
+          "get_persons": "Liste des personnes (admin)",
+          "create_person": "Créer une personne",
+          "update_person": "Modifier une personne",
+          "delete_person": "Supprimer une personne"
+        },
+        "badges": {
+          "title": "Gestion des badges",
+          "list": "Liste des badges",
+          "toggle_status": "Changer statut badge"
+        },
+        "messaging": {
+          "title": "Messagerie",
+          "conversations": "Liste des conversations",
+          "create_conversation": "Créer une conversation",
+          "messages": "Messages d'un groupe",
+          "send_message": "Envoyer un message"
+        },
+        "incidents": {
+          "title": "Gestion des incidents",
+          "list": "Liste des incidents",
+          "create": "Créer un incident",
+          "update": "Modifier un incident"
+        }
+      }
+    },
+    "database": {
+      "title": "Base de Données",
+      "model": {
+        "title": "Modèle de données",
+        "description": "La base de données gestion_entreprise_residence utilise MySQL avec un charset UTF8MB4 pour supporter les emojis et caractères internationaux."
+      },
+      "tables": {
+        "title": "Tables principales",
+        "personne": {
+          "title": "personne",
+          "description": "Table centrale contenant tous les utilisateurs (admins, gardiens, résidents, invités)"
+        },
+        "roles": {
+          "title": "admin, gardien, resident",
+          "description": "Tables de spécialisation avec FK vers personne"
+        },
+        "badge": {
+          "title": "badge",
+          "description": "Gestion des badges d'accès physique"
+        },
+        "message": {
+          "title": "message, groupe_message",
+          "description": "Système de messagerie interne avec groupes"
+        },
+        "incident": {
+          "title": "incident",
+          "description": "Gestion des incidents et signalements"
+        }
+      },
+      "test_accounts": {
+        "title": "Comptes de test",
+        "admin": {
+          "title": "Administrateur principal",
+          "email": "Email :",
+          "password": "Mot de passe :",
+          "role": "Rôle :",
+          "badge": "Badge :"
+        }
+      }
+    },
+    "deployment": {
+      "title": "Déploiement",
+      "requirements": {
+        "title": "Prérequis"
+      },
+      "installation": {
+        "title": "Installation locale"
+      },
+      "environment": {
+        "title": "Variables d'environnement",
+        "backend_client": "Backend-Client (.env)",
+        "backend_nhs": "Backend-NHS (.env)"
+      }
+    },
+    "security": {
+      "title": "Sécurité",
+      "auth": {
+        "title": "Authentification",
+        "sanctum": "Tokens SPA sécurisés",
+        "hash": "Hash passwords : bcrypt avec salt automatique",
+        "rate_limiting": "Protection contre brute force",
+        "cors": "Configuration restrictive"
+      },
+      "validation": {
+        "title": "Validation des données",
+        "server": "Validation côté serveur sur tous les endpoints",
+        "sanitization": "Sanitisation des entrées utilisateur",
+        "protection": "Protection XSS et injection SQL",
+        "upload": "Upload de fichiers sécurisé avec vérification MIME"
+      },
+      "monitoring": {
+        "title": "Logs et monitoring",
+        "table": "Table logs pour traçabilité des actions",
+        "laravel": "Logs Laravel dans storage/logs/",
+        "proxy": "Monitoring des requêtes proxy",
+        "alerts": "Alertes sur erreurs critiques"
+      }
+    },
+    "maintenance": {
+      "title": "Maintenance & Opérations",
+      "commands": {
+        "title": "Commandes utiles"
+      },
+      "monitoring": {
+        "title": "Monitoring des services",
+        "backend_client": "Health check Backend-Client :",
+        "backend_nhs": "Health check Backend-NHS :"
+      },
+      "backup": {
+        "title": "Sauvegarde",
+        "database": "mysqldump quotidien",
+        "files": "rsync des dossiers storage et public",
+        "config": "sauvegarde des fichiers .env"
+      },
+      "performance": {
+        "title": "Performances",
+        "cache": "Cache Redis pour les sessions (optionnel)",
+        "optimization": "Optimisation des requêtes avec index MySQL",
+        "compression": "Compression gzip/brotli",
+        "cdn": "CDN pour les assets statiques"
+      }
+    },
+    "troubleshooting": {
+      "title": "Dépannage",
+      "common_issues": {
+        "title": "Problèmes courants",
+        "nhs_connection": {
+          "title": "Erreur de connexion Backend-NHS",
+          "symptom": "NHS Backend unavailable",
+          "checks": "Vérifications :",
+          "solutions": [
+            "Backend-NHS en cours d'exécution sur port 8001",
+            "Variable NHS_API_URL correcte dans backend-client",
+            "Firewall/antivirus ne bloque pas le port"
+          ]
+        },
+        "auth_error": {
+          "title": "Erreur d'authentification",
+          "symptom": "Unauthenticated",
+          "solutions": [
+            "Vérifier le token Bearer dans l'en-tête",
+            "Vérifier expiration du token",
+            "Réinitialiser la session utilisateur"
+          ]
+        }
+      },
+      "debug_logs": {
+        "title": "Logs de débogage"
+      }
+    },
+    "support": {
+      "title": "Support Technique",
+      "contact": {
+        "title": "Contact équipe technique",
+        "urgent": {
+          "title": "Urgences techniques",
+          "email": "Email : tech-urgent@neostart.tech",
+          "availability": "Disponibilité : 24/7",
+          "sla": "SLA : 2h maximum"
+        },
+        "development": {
+          "title": "Support développement",
+          "email": "Email : dev-support@neostart.tech",
+          "hours": "Horaires : 9h-18h (CET)",
+          "docs": "Documentation : docs.neostart.tech"
+        }
+      }
+    },
+    "version": {
+      "doc_version": "Version de la documentation :",
+      "last_update": "Dernière mise à jour :",
+      "architecture": "Architecture :"
+    },
+    "performance": {
+      "title": "Performances",
+      "description": "Optimisation et tuning pour hautes performances",
+      "main_title": "Optimisation des performances",
+      "header": {
+        "title": "Performance maximale",
+        "description": "Stratégies complètes d'optimisation pour la plateforme de gestion d'entreprise-résidence. Cache intelligent, optimisation base de données, CDN et techniques avancées pour une expérience utilisateur fluide."
+      }
+    },
+    "observability": {
+      "title": "Observabilité",
+      "description": "Monitoring et observabilité système"
+    },
+    "runbook": {
+      "title": "Runbook",
+      "description": "Procédures opérationnelles et dépannage"
+    },
+    "tests": {
+      "title": "Tests",
+      "description": "Stratégie de tests et qualité"
+    },
+    "conventions": {
+      "title": "Conventions",
+      "description": "Standards de développement et conventions"
+    }
+  },
+  "theme": {
+    "toggle": "Basculer le thème",
+    "dark": "Mode sombre",
+    "light": "Mode clair"
+  }
+}
+
+

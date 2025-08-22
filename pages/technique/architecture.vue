@@ -1,5 +1,5 @@
 <template>
-  <DocShell type="tech" title="Architecture technique" description="Vue d'ensemble de l'architecture système">
+  <DocShell type="tech" :title="t('architecture.title')" :description="t('architecture.description')">
     <div class="prose prose-slate max-w-none dark:prose-invert">
       <h1>Architecture technique</h1>
       
@@ -458,16 +458,137 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from 'vue'
-  import { useTheme } from '../../composables/useTheme'
-  
-  // Import du système de thème
-  const { initTheme } = useTheme()
-  useHead({ title: 'Architecture technique - Documentation' })
+import { onMounted } from 'vue'
 
-  onMounted(() => {
-    initTheme()
-  })
+// Import du système de thème
+const { initTheme } = useTheme()
+
+// Fonction de traduction utilisant les fichiers JSON i18n
+const route = useRoute()
+
+const getCurrentLocale = () => {
+  const path = route.path
+  if (path.startsWith('/en')) return 'en'
+  if (path.startsWith('/zh')) return 'zh'
+  return 'fr'
+}
+
+const locale = getCurrentLocale()
+
+// Fonction de traduction simple
+const t = (key: string) => {
+  // Traductions directes depuis les fichiers JSON - Section Architecture
+  const translations: Record<string, Record<string, any>> = {
+    fr: {
+      'architecture': {
+        'title': 'Architecture technique',
+        'description': 'Vue d\'ensemble de l\'architecture système',
+        'header': {
+          'title': 'Architecture distribuée moderne',
+          'description': 'Plateforme de gestion d\'entreprise-résidence basée sur une architecture dual-backend avec séparation des responsabilités, stabilité et maintenance facilitée.',
+          'features': {
+            'frontend': 'Nuxt.js 3.18 + Vue.js 3 + TypeScript',
+            'backend': 'Dual Laravel 11 (Proxy + Business Logic)',
+            'data': 'MySQL 8.0 + Redis Cache + File Storage'
+          }
+        },
+        'overview': {
+          'title': 'Vue d\'ensemble de l\'architecture',
+          'layers': {
+            'title': 'Architecture en couches',
+            'description': 'L\'application suit une architecture en couches séparant clairement les responsabilités :',
+            'layers_title': 'Couches applicatives',
+            'presentation': {
+              'title': 'Couche Présentation (Frontend)',
+              'items': [
+                'Nuxt.js 3.18 : Framework full-stack Vue.js avec SSR/SPA',
+                'Vue.js 3 + TypeScript : Interface utilisateur réactive et typée',
+                'Tailwind CSS : Framework CSS utilitaire pour design system',
+                'Pinia : Gestion d\'état centralisée',
+                'i18n : Internationalisation (FR/EN/ZH)'
+              ]
+            },
+            'api_gateway': {
+              'title': 'Couche API Gateway (Backend-Client)',
+              'items': [
+                'Laravel 11 : Framework PHP moderne avec Eloquent ORM',
+                'Port 8000 : Point d\'entrée unique pour toutes les requêtes',
+                'Proxy intelligent : Redirection vers backend-nhs',
+                'Gestion base de données : Accès direct aux données',
+                'Laravel Sanctum : Authentification API'
+              ]
+            },
+            'business': {
+              'title': 'Couche Métier (Backend-NHS)',
+              'items': [
+                'Laravel 11 : Logique métier et règles business',
+                'Port 8001 : Service spécialisé pour traitements complexes',
+                'Business Logic : Algorithmes, calculs, workflows',
+                'Services spécialisés : Badges, incidents, messagerie',
+                'Intégrations externes : APIs tierces, notifications'
+              ]
+            },
+            'data': {
+              'title': 'Couche Données (Database)',
+              'items': [
+                'MySQL 8.0 : Base de données relationnelle principale',
+                'Redis : Cache haute performance et sessions',
+                'File Storage : Stockage sécurisé des fichiers',
+                'Backup System : Sauvegarde automatisée',
+                'Logging : Journalisation centralisée'
+              ]
+            }
+          },
+          'deployment': {
+            'title': 'Architecture de déploiement',
+            'description': 'Configuration distribuée pour haute disponibilité et performance :',
+            'network_topology': 'Topology réseau',
+            'frontend': {
+              'title': 'Frontend (Port 3000)',
+              'items': [
+                'Serveur web Nuxt.js : SSR/SPA hybride',
+                'CDN intégré : Assets statiques optimisés',
+                'Hot reload : Développement temps réel',
+                'Build optimisé : Tree-shaking, minification',
+                'PWA ready : Service workers, offline'
+              ]
+            },
+            'backend_services': {
+              'title': 'Backend Services',
+              'items': [
+                'Backend-Client (8000) : API Gateway + DB Access'
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Navigation dans l'objet de traductions
+  const keys = key.split('.')
+  let value = translations[locale]
+  
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = value[k]
+    } else {
+      return key // Retourne la clé si la traduction n'est pas trouvée
+    }
+  }
+  
+  return typeof value === 'string' ? value : key
+}
+
+// Configuration des métadonnées
+useHead({ 
+  title: t('architecture.title') + ' - Documentation'
+})
+
+// Initialisation du thème
+onMounted(() => {
+  initTheme()
+})
 </script>
 
 

@@ -1,0 +1,76 @@
+{
+  "home": {
+    "title": "Choisissez votre espace de documentation",
+    "subtitle": "Deux parcours complémentaires conçus pour optimiser votre expérience. Un guide fonctionnel pour les utilisateurs finaux et une référence technique détaillant architecture, API et processus de maintenance.",
+    "badge": "Plateforme moderne et évolutive",
+    "guide": {
+      "title": "Guide d'utilisation",
+      "subtitle": "Pour les utilisateurs et administrateurs fonctionnels",
+      "description": "Parcours guidé avec cas d'usage concrets, captures d'écran annotées, bonnes pratiques quotidiennes et résolution rapide des problèmes courants. Une approche progressive pour maîtriser toutes les fonctionnalités.",
+      "features": {
+        "onboarding": "Onboarding & configuration initiale",
+        "users": "Gestion des utilisateurs & système de droits",
+        "messaging": "Messagerie, planification & gestion d'incidents"
+      },
+      "action": "Accéder au guide"
+    },
+    "technique": {
+      "title": "Référence technique",
+      "subtitle": "Pour développeurs & équipes de maintenance",
+      "description": "Vision système complète avec architecture dual backend, documentation API exhaustive, modèles de données, sécurité, déploiement et procédures opérationnelles de support technique.",
+      "features": {
+        "architecture": "Architecture & diagrammes de flux",
+        "api": "Endpoints API & authentification",
+        "database": "Base de données, migrations & runbooks"
+      },
+      "action": "Accéder à la référence"
+    },
+    "changelog": {
+      "title": "Évolution de la plateforme",
+      "subtitle": "Suivi des dernières améliorations et fonctionnalités",
+      "badge": "Mises à jour récentes",
+      "v21": {
+        "title": "Personnalisation complète",
+        "description": "Système de personnalisation avancé permettant la modification des logos, couleurs principales et textes personnalisés directement depuis l'interface d'administration.",
+        "badge": "v2.1.0",
+        "feature": "Fonctionnalité majeure",
+        "date": "12 Août 2025"
+      },
+      "v20": {
+        "title": "Architecture révolutionnaire",
+        "description": "Refactorisation complète vers une architecture dual backend. Séparation claire entre proxy d'orchestration et logique métier pour une performance et maintenabilité optimales.",
+        "badge": "v2.0.0",
+        "feature": "Refonte architecturale",
+        "date": "10 Août 2025"
+      },
+      "cta": {
+        "ready": "Prêt à démarrer ?",
+        "subtitle": "Explorez nos guides détaillés et commencez dès maintenant"
+      }
+    },
+    "support": {
+      "title": "Besoin d'aide ou d'accompagnement ?",
+      "subtitle": "Notre équipe d'experts est à votre disposition pour vous accompagner dans votre montée en compétences et résoudre tous vos défis techniques.",
+      "badge": "Support & Assistance",
+      "chat": {
+        "title": "Chat en temps réel",
+        "description": "Assistance immédiate via chat intégré avec notre équipe de support technique",
+        "badge": "Disponible 24/7"
+      },
+      "email": {
+        "title": "Support par email",
+        "description": "Assistance détaillée par email avec documentation complète et guides personnalisés",
+        "badge": "Réponse sous 24h"
+      },
+      "expert": {
+        "title": "Accompagnement expert",
+        "description": "Sessions personnalisées avec nos experts pour formation avancée et résolution de défis complexes",
+        "badge": "Sur rendez-vous"
+      },
+      "contact": {
+        "title": "Contacter l'équipe",
+        "subtitle": "Réponse garantie sous 24h"
+      }
+    }
+  }
+}

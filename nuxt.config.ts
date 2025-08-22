@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n'
   ],
   
   // Configuration Tailwind
@@ -65,5 +66,11 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['composables/**'],
     global: true
+  },
+
+  // Configuration i18n
+  i18n: {
+    locales: ['fr', 'en', 'zh'],
+    defaultLocale: 'fr'
   }
 })

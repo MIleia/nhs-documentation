@@ -1,5 +1,5 @@
 <template>
-  <DocShell type="tech" title="Sécurité" description="Mesures de sécurité et conformité">
+  <DocShell type="tech" :title="t('security.title')" :description="t('security.description')">
     <div class="prose prose-slate max-w-none dark:prose-invert">
       <h1>Sécurité</h1>
       
@@ -552,16 +552,51 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from 'vue'
-  import { useTheme } from '../../composables/useTheme'
-  
-  // Import du système de thème
-  const { initTheme } = useTheme()
-  useHead({ title: 'Sécurité - Documentation technique' })
+import { onMounted } from 'vue'
 
-  onMounted(() => {
-    initTheme()
-  })
+// Import du système de thème
+const { initTheme } = useTheme()
+
+// Fonction de traduction utilisant les fichiers JSON i18n
+const route = useRoute()
+const getCurrentLocale = () => {
+  const path = route.path
+  if (path.startsWith('/en')) return 'en'
+  if (path.startsWith('/zh')) return 'zh'
+  return 'fr'
+}
+const locale = getCurrentLocale()
+
+// Fonction de traduction simple
+const t = (key: string) => {
+  const translations: Record<string, Record<string, any>> = {
+    fr: {
+      'security': {
+        'title': 'Sécurité',
+        'description': 'Mesures de sécurité et protocoles'
+      }
+    }
+  }
+  
+  const keys = key.split('.')
+  let value = translations[locale]
+  
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = value[k]
+    } else {
+      return key
+    }
+  }
+  
+  return typeof value === 'string' ? value : key
+}
+
+useHead({ title: t('security.title') + ' - Documentation technique' })
+
+onMounted(() => {
+  initTheme()
+})
 </script>
 
 

@@ -6,23 +6,28 @@
     </transition>
     
     <!-- Sidebar raffinée -->
-    <aside :class="['fixed z-50 lg:static top-0 left-0 h-full lg:h-auto w-72 shrink-0 border-r border-gray-200/70 dark:border-slate-700/70 bg-gradient-to-b from-white via-gray-50/80 to-white dark:from-slate-900 dark:via-slate-800/70 dark:to-slate-900/90 flex flex-col shadow-2xl lg:shadow-xl backdrop-blur-xl transform transition-all duration-300', mobileOpen?'translate-x-0':'-translate-x-full lg:translate-x-0']">
-      <!-- Header amélioré -->
-      <div class="h-16 flex items-center px-6 border-b border-gray-200/60 dark:border-slate-700/60 justify-between bg-gradient-to-r from-white/80 to-gray-50/80 dark:from-slate-900/80 dark:to-slate-800/80 backdrop-blur-sm">
-        <NuxtLink to="/" class="group flex items-center gap-3 font-bold text-gray-700 dark:text-slate-200 hover:text-gray-900 dark:hover:text-white transition-all duration-200">
-          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <div class="text-xs font-black tracking-wider uppercase text-blue-600 dark:text-blue-400">Hub</div>
-            <div class="text-[10px] text-gray-500 dark:text-slate-400 -mt-0.5">Documentation</div>
-          </div>
-        </NuxtLink>
-        <button class="lg:hidden p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200" @click="mobileOpen=false">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    <aside :class="['fixed z-50 top-0 left-0 h-screen w-72 shrink-0 border-r border-gray-200/70 dark:border-slate-700/70 bg-gradient-to-b from-white via-gray-50/80 to-white dark:from-slate-900 dark:via-slate-800/70 dark:to-slate-900/90 flex flex-col shadow-2xl lg:shadow-xl backdrop-blur-xl transform transition-all duration-300', mobileOpen?'translate-x-0':'-translate-x-full lg:translate-x-0']">
+      <!-- Header + Sélecteur de langue en haut du menu latéral -->
+      <div class="flex flex-col items-stretch border-b border-gray-200/60 dark:border-slate-700/60 bg-gradient-to-r from-white/80 to-gray-50/80 dark:from-slate-900/80 dark:to-slate-800/80 backdrop-blur-sm" style="min-height:90px;">
+        <div class="flex items-center justify-between px-6 pt-2 pb-1">
+          <NuxtLink to="/" class="group flex items-center gap-3 font-bold text-gray-700 dark:text-slate-200 hover:text-gray-900 dark:hover:text-white transition-all duration-200">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <div class="text-xs font-black tracking-wider uppercase text-blue-600 dark:text-blue-400">Hub</div>
+              <div class="text-[10px] text-gray-500 dark:text-slate-400 -mt-0.5">Documentation</div>
+            </div>
+          </NuxtLink>
+          <button class="lg:hidden p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200" @click="mobileOpen=false">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="px-6 pb-2 pt-1">
+          <LanguageSelector />
+        </div>
       </div>
       
       <!-- Recherche stylisée -->
@@ -115,7 +120,7 @@
     </aside>
 
     <!-- Main content area -->
-    <div class="flex-1 min-w-0 flex flex-col">
+    <div class="flex-1 min-w-0 flex flex-col ml-0 lg:ml-72">
       <!-- Header raffiné -->
       <header class="h-16 flex items-center backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-950/80 bg-gradient-to-r from-white/90 via-white/95 to-white/90 dark:from-slate-950/90 dark:via-slate-950/95 dark:to-slate-950/90 border-b border-gray-200/60 dark:border-slate-700/60 px-4 sm:px-8 gap-4 shadow-sm">
         <button class="lg:hidden p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200" @click="mobileOpen=true">
@@ -128,26 +133,29 @@
         </div>
         
         <!-- Tabs sophistiqués -->
-        <div class="ml-auto flex items-center gap-1 p-1 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 rounded-2xl border border-gray-200/60 dark:border-slate-600/60 shadow-lg backdrop-blur-sm">
-          <NuxtLink to="/guide" class="tab-btn-enhanced" :class="{active:isGuide}">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-            </svg>
-            Guide utilisateur
-          </NuxtLink>
-          <NuxtLink to="/technique" class="tab-btn-enhanced" :class="{active:!isGuide}">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-            </svg>
-            Documentation technique
-          </NuxtLink>
+        <div class="ml-auto flex items-center gap-3">
+          <!-- Tabs de navigation -->
+          <div class="flex items-center gap-1 p-1 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 rounded-2xl border border-gray-200/60 dark:border-slate-600/60 shadow-lg backdrop-blur-sm">
+            <NuxtLink to="/guide" class="tab-btn-enhanced" :class="{active:isGuide}">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              Guide utilisateur
+            </NuxtLink>
+            <NuxtLink to="/technique" class="tab-btn-enhanced" :class="{active:!isGuide}">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+              Documentation technique
+            </NuxtLink>
+          </div>
         </div>
       </header>
       
       <!-- Content area amélioré -->
       <main class="px-4 sm:px-8 py-12 relative bg-gradient-to-br from-transparent via-gray-50/30 to-transparent dark:from-transparent dark:via-slate-900/30 dark:to-transparent">
         <!-- Search results sophistiqués -->
-        <div v-if="searchResultsVisible" class="absolute z-30 top-24 right-4 left-4 sm:right-auto sm:w-96 bg-gradient-to-br from-white via-white to-gray-50/80 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900/80 border border-gray-200/70 dark:border-slate-600/70 rounded-2xl shadow-2xl backdrop-blur-xl overflow-hidden">
+        <div v-if="searchResultsVisible" class="absolute z-10 top-24 right-4 left-4 sm:right-auto sm:w-96 bg-gradient-to-br from-white via-white to-gray-50/80 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900/80 border border-gray-200/70 dark:border-slate-600/70 rounded-2xl shadow-2xl backdrop-blur-xl overflow-hidden">
           <div class="p-4 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/50 dark:to-indigo-950/50 border-b border-gray-200/60 dark:border-slate-700/60">
             <p class="text-xs font-bold text-gray-700 dark:text-slate-300 flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,6 +176,9 @@
           </div>
         </div>
         <slot />
+        
+        <!-- Footer de page -->
+        <PageFooter />
       </main>
     </div>
   </div>

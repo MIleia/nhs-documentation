@@ -1,0 +1,396 @@
+{
+  "nav": {
+    "home": "首页",
+    "guide": "用户指南",
+    "technique": "技术文档",
+    "language": "语言"
+  },
+  "home": {
+    "title": "选择您的文档空间",
+    "subtitle": "两个互补的路径旨在优化您的体验。为最终用户提供功能指南，为开发者提供详细说明架构、API和维护流程的技术参考。",
+    "badge": "现代化可扩展平台",
+    "guide": {
+      "title": "用户指南",
+      "description": "包含具体用例、注释截图、日常最佳实践和常见问题快速解决方案的引导式学习。逐步掌握所有功能的渐进式方法。",
+      "action": "访问指南"
+    },
+    "technique": {
+      "title": "技术参考",
+      "description": "完整的系统概览，包含双后端架构、全面的API文档、数据模型、安全性、部署和技术支持操作程序。",
+      "action": "访问参考"
+    },
+    "changelog": {
+      "title": "平台演进",
+      "subtitle": "跟踪最新改进和功能",
+      "badge": "最近更新",
+      "v21": {
+        "title": "完整定制",
+        "description": "高级定制系统，允许直接从管理界面修改徽标、主色调和自定义文本。",
+        "badge": "主要功能"
+      },
+      "v20": {
+        "title": "革命性架构",
+        "description": "完全重构为双后端架构。编排代理和业务逻辑之间的清晰分离，实现最佳性能和可维护性。",
+        "badge": "架构改革"
+      }
+    },
+    "support": {
+      "title": "需要帮助或支持？",
+      "subtitle": "我们的专家团队随时为您提供技能提升指导并解决所有技术挑战。",
+      "badge": "支持与协助",
+      "chat": {
+        "title": "实时聊天",
+        "description": "通过与我们技术支持团队的集成聊天获得即时帮助",
+        "badge": "24/7可用"
+      },
+      "email": {
+        "title": "邮件支持",
+        "description": "详细的邮件协助，包含完整文档和个性化指南",
+        "badge": "24小时内回复"
+      },
+      "training": {
+        "title": "培训课程",
+        "description": "个性化视频会议培训，掌握所有高级功能",
+        "badge": "预约制"
+      },
+      "contact": {
+        "title": "联系我们的团队",
+        "email": "support{at}neostart.tech"
+      }
+    },
+    "cta": {
+      "ready": "准备开始了吗？",
+      "explore": "探索我们的详细指南，立即开始"
+    }
+  },
+  "guide": {
+    "title": "用户指南",
+    "subtitle": "用户完整文档",
+    "navigation": "快速导航",
+    "sections": {
+      "onboarding": {
+        "title": "入门",
+        "description": "界面发现和基本首要操作",
+        "action": "开始"
+      },
+      "users": {
+        "title": "用户管理",
+        "description": "用户账户的创建、修改和管理",
+        "action": "管理"
+      },
+      "messaging": {
+        "title": "消息系统",
+        "description": "居民和管理部门之间的有效沟通",
+        "action": "沟通"
+      },
+      "visits": {
+        "title": "访问管理",
+        "description": "访问和预约的规划和跟踪",
+        "action": "规划"
+      },
+      "incidents": {
+        "title": "事件管理",
+        "description": "问题和事件的报告和跟踪",
+        "action": "报告"
+      },
+      "administration": {
+        "title": "管理",
+        "description": "系统管理员的高级功能",
+        "action": "管理"
+      }
+    }
+  },
+  "technique": {
+    "title": "完整技术文档",
+    "subtitle": "开发者和系统管理员的完整参考",
+    "description": "架构、API、运维和维护",
+    "overview": {
+      "title": "技术概览",
+      "description": "本文档面向开发、DevOps和技术支持团队。描述了创新的双后端架构、数据流、完整API、数据库和操作程序。",
+      "architecture": {
+        "title": "架构",
+        "description": "双后端：Backend-Client（代理 + 数据库）+ Backend-NHS（业务逻辑）"
+      },
+      "technologies": {
+        "title": "技术栈",
+        "description": "Nuxt.js 3.18、Laravel 11、MySQL、Docker、Sanctum"
+      }
+    },
+    "architecture": {
+      "title": "系统架构",
+      "overview": {
+        "title": "概述",
+        "description": "应用程序使用创新的微服务架构，包含2个专门的后端："
+      },
+      "backend_client": {
+        "title": "Backend-Client（端口8000）",
+        "role": "智能代理 + 直接数据库访问",
+        "responsibilities": "职责：",
+        "features": {
+          "auth": "使用Laravel Sanctum的本地认证",
+          "database": "直接访问MySQL数据库",
+          "files": "文件和上传管理",
+          "proxy": "到Backend-NHS的透明代理",
+          "settings": "应用程序设置管理（徽标、颜色）"
+        },
+        "technologies": "Laravel 11、MySQL、Sanctum"
+      },
+      "backend_nhs": {
+        "title": "Backend-NHS（端口8001）",
+        "role": "完整的业务逻辑和专有功能",
+        "responsibilities": "职责：",
+        "features": {
+          "business": "业务逻辑和业务规则",
+          "validation": "复杂数据验证",
+          "proprietary": "NHS专有功能",
+          "api": "业务API端点",
+          "analytics": "高级分析和报告"
+        },
+        "technologies": "Laravel 11、REST API"
+      },
+      "frontend": {
+        "title": "前端（端口3000/3001）",
+        "technologies": "Nuxt.js 3.18、Vue.js 3、TypeScript、Tailwind CSS",
+        "features": {
+          "responsive": "现代响应式用户界面",
+          "theme": "主题系统（亮色/暗色）",
+          "i18n": "国际化（fr、en、zh）",
+          "pwa": "PWA和性能优化",
+          "stores": "用于状态管理的Pinia存储"
+        }
+      }
+    },
+    "api": {
+      "title": "API文档",
+      "base_urls": {
+        "title": "基础URL",
+        "backend_client": "Backend-Client：",
+        "backend_nhs_proxy": "Backend-NHS（通过代理）：",
+        "backend_nhs_direct": "Backend-NHS（直接）："
+      },
+      "auth": {
+        "title": "认证",
+        "description": "系统使用Laravel Sanctum进行基于令牌的认证。",
+        "login": {
+          "title": "登录",
+          "returns": "返回：access_token、用户数据、expires_at"
+        },
+        "headers": "认证头部"
+      },
+      "endpoints": {
+        "title": "主要端点",
+        "users": {
+          "title": "用户管理",
+          "get_user": "已连接用户信息",
+          "get_persons": "人员列表（管理员）",
+          "create_person": "创建人员",
+          "update_person": "更新人员",
+          "delete_person": "删除人员"
+        },
+        "badges": {
+          "title": "徽章管理",
+          "list": "徽章列表",
+          "toggle_status": "更改徽章状态"
+        },
+        "messaging": {
+          "title": "消息系统",
+          "conversations": "对话列表",
+          "create_conversation": "创建对话",
+          "messages": "群组消息",
+          "send_message": "发送消息"
+        },
+        "incidents": {
+          "title": "事件管理",
+          "list": "事件列表",
+          "create": "创建事件",
+          "update": "更新事件"
+        }
+      }
+    },
+    "database": {
+      "title": "数据库",
+      "model": {
+        "title": "数据模型",
+        "description": "gestion_entreprise_residence数据库使用UTF8MB4字符集的MySQL来支持表情符号和国际字符。"
+      },
+      "tables": {
+        "title": "主要表",
+        "personne": {
+          "title": "personne",
+          "description": "包含所有用户的中心表（管理员、保安、居民、访客）"
+        },
+        "roles": {
+          "title": "admin、gardien、resident",
+          "description": "具有指向personne外键的专门表"
+        },
+        "badge": {
+          "title": "badge",
+          "description": "物理访问徽章管理"
+        },
+        "message": {
+          "title": "message、groupe_message",
+          "description": "带群组的内部消息系统"
+        },
+        "incident": {
+          "title": "incident",
+          "description": "事件和报告管理"
+        }
+      },
+      "test_accounts": {
+        "title": "测试账户",
+        "admin": {
+          "title": "主管理员",
+          "email": "邮箱：",
+          "password": "密码：",
+          "role": "角色：",
+          "badge": "徽章："
+        }
+      }
+    },
+    "deployment": {
+      "title": "部署",
+      "requirements": {
+        "title": "先决条件"
+      },
+      "installation": {
+        "title": "本地安装"
+      },
+      "environment": {
+        "title": "环境变量",
+        "backend_client": "Backend-Client（.env）",
+        "backend_nhs": "Backend-NHS（.env）"
+      }
+    },
+    "security": {
+      "title": "安全",
+      "auth": {
+        "title": "认证",
+        "sanctum": "安全SPA令牌",
+        "hash": "密码哈希：带自动盐的bcrypt",
+        "rate_limiting": "暴力破解保护",
+        "cors": "限制性配置"
+      },
+      "validation": {
+        "title": "数据验证",
+        "server": "所有端点的服务器端验证",
+        "sanitization": "用户输入净化",
+        "protection": "XSS和SQL注入保护",
+        "upload": "带MIME验证的安全文件上传"
+      },
+      "monitoring": {
+        "title": "日志和监控",
+        "table": "用于操作可追溯性的日志表",
+        "laravel": "storage/logs/中的Laravel日志",
+        "proxy": "代理请求监控",
+        "alerts": "关键错误警报"
+      }
+    },
+    "maintenance": {
+      "title": "维护和运维",
+      "commands": {
+        "title": "有用命令"
+      },
+      "monitoring": {
+        "title": "服务监控",
+        "backend_client": "Backend-Client健康检查：",
+        "backend_nhs": "Backend-NHS健康检查："
+      },
+      "backup": {
+        "title": "备份",
+        "database": "每日mysqldump",
+        "files": "storage和public文件夹的rsync",
+        "config": ".env文件备份"
+      },
+      "performance": {
+        "title": "性能",
+        "cache": "会话的Redis缓存（可选）",
+        "optimization": "使用MySQL索引的查询优化",
+        "compression": "gzip/brotli压缩",
+        "cdn": "静态资源CDN"
+      }
+    },
+    "troubleshooting": {
+      "title": "故障排除",
+      "common_issues": {
+        "title": "常见问题",
+        "nhs_connection": {
+          "title": "Backend-NHS连接错误",
+          "symptom": "NHS Backend不可用",
+          "checks": "检查：",
+          "solutions": [
+            "Backend-NHS在端口8001上运行",
+            "backend-client中NHS_API_URL变量正确",
+            "防火墙/杀毒软件未阻止端口"
+          ]
+        },
+        "auth_error": {
+          "title": "认证错误",
+          "symptom": "未认证",
+          "solutions": [
+            "检查头部中的Bearer令牌",
+            "检查令牌过期",
+            "重置用户会话"
+          ]
+        }
+      },
+      "debug_logs": {
+        "title": "调试日志"
+      }
+    },
+    "support": {
+      "title": "技术支持",
+      "contact": {
+        "title": "技术团队联系方式",
+        "urgent": {
+          "title": "技术紧急情况",
+          "email": "邮箱：tech-urgent@neostart.tech",
+          "availability": "可用性：24/7",
+          "sla": "SLA：最多2小时"
+        },
+        "development": {
+          "title": "开发支持",
+          "email": "邮箱：dev-support@neostart.tech",
+          "hours": "时间：上午9点-下午6点（CET）",
+          "docs": "文档：docs.neostart.tech"
+        }
+      }
+    },
+    "version": {
+      "doc_version": "文档版本：",
+      "last_update": "最后更新：",
+      "architecture": "架构："
+    },
+    "performance": {
+      "title": "性能",
+      "description": "高性能优化和调优",
+      "main_title": "性能优化",
+      "header": {
+        "title": "最大性能",
+        "description": "企业住宅管理平台的完整优化策略。智能缓存、数据库优化、CDN和先进技术，实现流畅的用户体验。"
+      }
+    },
+    "observability": {
+      "title": "可观测性",
+      "description": "系统监控和可观测性"
+    },
+    "runbook": {
+      "title": "运行手册",
+      "description": "操作程序和故障排除"
+    },
+    "tests": {
+      "title": "测试",
+      "description": "测试策略和质量"
+    },
+    "conventions": {
+      "title": "约定",
+      "description": "开发标准和约定"
+    }
+  },
+  "theme": {
+    "toggle": "切换主题",
+    "dark": "深色模式",
+    "light": "浅色模式"
+  }
+}
+
+
